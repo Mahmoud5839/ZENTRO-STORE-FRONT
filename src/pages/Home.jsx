@@ -21,7 +21,7 @@ const Home = () => {
 
   const fetchProducts = async () => {
     try {
-      const { data } = await api.get("/products");
+      const { data } = await api.get("api/products");
       setProducts(data);
       setFilteredProducts(data);
 

@@ -25,7 +25,7 @@ const NotificationsDropdown = () => {
     if (!userInfo || userInfo.role !== "admin") return;
     setLoading(true);
     try {
-      const { data } = await api.get("/notifications/admin");
+      const { data } = await api.get("api/notifications/admin");
       setAdminNotifs(data.notifications || []);
     } catch (error) {
       console.error("Error fetching admin notifications:", error);
@@ -38,7 +38,7 @@ const NotificationsDropdown = () => {
     if (!userInfo || userInfo.role !== "user") return;
     setLoading(true);
     try {
-      const { data } = await api.get("/notifications/my");
+      const { data } = await api.get("api/notifications/my");
       setUserNotifs(data.notifications || []);
     } catch (error) {
       console.error("Error fetching user notifications:", error);
@@ -74,7 +74,7 @@ const NotificationsDropdown = () => {
 
   const handleMarkAsRead = async (id) => {
     try {
-      await api.put(`/notifications/${id}/read`);
+      await api.put(`api/notifications/${id}/read`);
       if (userInfo?.role === "admin") {
         fetchAdminNotifications();
       } else {
@@ -87,7 +87,7 @@ const NotificationsDropdown = () => {
 
   const handleMarkAllAsRead = async () => {
     try {
-      await api.put("/notifications/read/all");
+      await api.put("api/notifications/read/all");
       if (userInfo?.role === "admin") {
         fetchAdminNotifications();
       } else {
@@ -165,7 +165,8 @@ const NotificationsDropdown = () => {
         onClick={() => setIsOpen(!isOpen)}
         className="relative flex items-center gap-2 px-4 py-2 rounded-md hover:bg-white/10 w-full transition"
       >
-        <FaBell className="text-xl" /> <span className="text-xl">الإشعارات</span>
+        <FaBell className="text-xl" />{" "}
+        <span className="text-xl">الإشعارات</span>
         {unreadCount > 0 && (
           <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center animate-pulse">
             {unreadCount > 9 ? "9+" : unreadCount}

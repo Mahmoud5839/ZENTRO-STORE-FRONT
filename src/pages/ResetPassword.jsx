@@ -42,7 +42,7 @@ const ResetPassword = () => {
 
     setLoading(true);
     try {
-      await api.post("/auth/reset-password", { token, password });
+      await api.post("api/auth/reset-password", { token, password });
       toast.success(" تم تغيير كلمة المرور بنجاح");
       setTimeout(() => navigate("/login"), 2000);
     } catch (error) {

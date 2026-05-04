@@ -20,7 +20,7 @@ const AdminMessages = () => {
 
   const fetchMessages = async () => {
     try {
-      const { data } = await api.get("/messages");
+      const { data } = await api.get("api/messages");
       setMessages(data);
     } catch (error) {
       console.error("Error fetching messages:", error);
@@ -36,7 +36,7 @@ const AdminMessages = () => {
 
   const markAsRead = async (id) => {
     try {
-      await api.put(`/messages/${id}/read`);
+      await api.put(`api/messages/${id}/read`);
       fetchMessages();
     } catch (error) {
       console.error("Error marking as read:", error);
@@ -51,7 +51,7 @@ const AdminMessages = () => {
 
     setSendingReply(true);
     try {
-      await api.put(`/messages/${id}/reply`, { reply: replyText });
+      await api.put(`api/messages/${id}/reply`, { reply: replyText });
       // toast.success(" تم إرسال الرد بنجاح!");
       setReplyText("");
       fetchMessages();

@@ -29,7 +29,7 @@ const AdminProducts = () => {
 
   const fetchProducts = async () => {
     try {
-      const { data } = await api.get("/products");
+      const { data } = await api.get("api/products");
       setProducts(data);
     } catch (error) {
       console.error("Error fetching products:", error);
@@ -56,11 +56,11 @@ const AdminProducts = () => {
       };
 
       if (editingProduct) {
-        await api.put(`/products/${editingProduct._id}`, productData);
+        await api.put(`api/products/${editingProduct._id}`, productData);
         // toast.success(" تم تحديث المنتج بنجاح");
         console.log("Product updated successfully");
       } else {
-        await api.post("/products", productData);
+        await api.post("api/products", productData);
         // toast.success(" تم إضافة المنتج بنجاح");
         console.log("Product add successfully");
       }
@@ -77,7 +77,7 @@ const AdminProducts = () => {
   const handleDelete = async (id) => {
     if (window.confirm("هل أنت متأكد من حذف هذا المنتج؟")) {
       try {
-        await api.delete(`/products/${id}`);
+        await api.delete(`api/products/${id}`);
         fetchProducts();
         // toast.success(" تم حذف المنتج بنجاح");
         alert(" تم حذف المنتج بنجاح");
