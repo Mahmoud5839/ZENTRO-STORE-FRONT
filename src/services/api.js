@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://zentro-store-5000.vercel.app/api';
+const API_URL = 'https://zentro-store-5000.vercel.app/api';
 
 const api = axios.create({
     baseURL: API_URL,
