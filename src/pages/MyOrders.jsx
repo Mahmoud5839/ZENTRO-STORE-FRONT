@@ -23,7 +23,7 @@ const MyOrders = () => {
 
   const fetchOrders = async () => {
     try {
-      const { data } = await api.get("api/orders/myorders");
+      const { data } = await api.get("/orders/myorders");
       setOrders(data);
     } catch (error) {
       console.error("Error fetching orders:", error);
@@ -34,7 +34,7 @@ const MyOrders = () => {
 
   const fetchReturns = async () => {
     try {
-      const { data } = await api.get("api/returns/my-returns");
+      const { data } = await api.get("/returns/my-returns");
       setReturns(data);
     } catch (error) {
       console.error("Error fetching returns:", error);

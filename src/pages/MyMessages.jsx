@@ -22,7 +22,7 @@ const MyMessages = () => {
 
   const fetchMessages = async () => {
     try {
-      const { data } = await api.get("api/messages/my-messages");
+      const { data } = await api.get("/messages/my-messages");
       setMessages(data);
       if (!selectedMessage && data.length > 0) {
         setSelectedMessage(data[0]);
@@ -74,7 +74,7 @@ const MyMessages = () => {
 
     setSendingReply(true);
     try {
-      await api.post(`api/messages/${ticketId}/reply-by-user`, {
+      await api.post(`/messages/${ticketId}/reply-by-user`, {
         message: replyText,
       });
       // toast.success(" تم إرسال ردك بنجاح");

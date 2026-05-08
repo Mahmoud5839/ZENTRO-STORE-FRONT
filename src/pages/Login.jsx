@@ -137,7 +137,7 @@ const Login = () => {
     try {
       let res;
       if (isRegister) {
-        res = await api.post("api/auth/register", { name, email, password });
+        res = await api.post("/auth/register", { name, email, password });
         toast.success(" تم إنشاء الحساب بنجاح! يرجى تأكيد بريدك الإلكتروني");
         // تفريغ الحقول بعد التسجيل
         setName("");
@@ -145,7 +145,7 @@ const Login = () => {
         setPassword("");
         setConfirmPassword("");
       } else {
-        res = await api.post("api/auth/login", { email, password });
+        res = await api.post("/auth/login", { email, password });
         toast.success("مرحباً بعودتك! ");
         dispatch(setUserInfo(res.data));
         // العودة للصفحة السابقة أو الرئيسية
@@ -179,7 +179,7 @@ const Login = () => {
 
     setSendingReset(true);
     try {
-      await api.post("api/auth/forgot-password", { email: forgotEmail });
+      await api.post("/auth/forgot-password", { email: forgotEmail });
       toast.success(
         "  تم إرسال رابط إعادة تعيين كلمة المرور إلى بريدك الإلكتروني",
       );
@@ -197,7 +197,7 @@ const Login = () => {
   const googleSuccess = async (credentialResponse) => {
     dispatch(setLoading(true));
     try {
-      const { data } = await api.post("api/auth/google", {
+      const { data } = await api.post("/auth/google", {
         credential: credentialResponse.credential,
       });
 

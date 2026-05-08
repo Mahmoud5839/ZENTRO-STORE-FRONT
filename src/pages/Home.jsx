@@ -21,7 +21,7 @@ const Home = () => {
 
   const fetchProducts = async () => {
     try {
-      const { data } = await api.get("api/products");
+      const { data } = await api.get("/products");
       setProducts(data);
       setFilteredProducts(data);
 
@@ -216,9 +216,9 @@ const Home = () => {
           ) : displayedProducts.length === 0 ? (
             <div className="text-center py-20 bg-white rounded-xl">
               <h3 className="text-xl font-semibold text-gray-600 mb-2">
-                لا توجد منتجات في هذا القسم
+                لا توجد منتجات  حاليا  
               </h3>
-              <p className="text-gray-400">جرب تصفح أقسام أخرى</p>
+              <p className="text-gray-400">انتظرنا قريبا</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">

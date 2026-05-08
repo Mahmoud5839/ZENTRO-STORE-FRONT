@@ -25,7 +25,7 @@ const NotificationsDropdown = () => {
     if (!userInfo || userInfo.role !== "admin") return;
     setLoading(true);
     try {
-      const { data } = await api.get("api/notifications/admin");
+      const { data } = await api.get("/notifications/admin");
       setAdminNotifs(data.notifications || []);
     } catch (error) {
       console.error("Error fetching admin notifications:", error);
@@ -38,7 +38,7 @@ const NotificationsDropdown = () => {
     if (!userInfo || userInfo.role !== "user") return;
     setLoading(true);
     try {
-      const { data } = await api.get("api/notifications/my");
+      const { data } = await api.get("/notifications/my");
       setUserNotifs(data.notifications || []);
     } catch (error) {
       console.error("Error fetching user notifications:", error);
@@ -74,7 +74,7 @@ const NotificationsDropdown = () => {
 
   const handleMarkAsRead = async (id) => {
     try {
-      await api.put(`api/notifications/${id}/read`);
+      await api.put(`/notifications/${id}/read`);
       if (userInfo?.role === "admin") {
         fetchAdminNotifications();
       } else {
@@ -87,7 +87,7 @@ const NotificationsDropdown = () => {
 
   const handleMarkAllAsRead = async () => {
     try {
-      await api.put("api/notifications/read/all");
+      await api.put("/notifications/read/all");
       if (userInfo?.role === "admin") {
         fetchAdminNotifications();
       } else {

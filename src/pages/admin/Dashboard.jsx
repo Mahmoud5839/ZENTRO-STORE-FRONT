@@ -19,7 +19,7 @@ const AdminDashboard = () => {
 
   const fetchProducts = async () => {
     try {
-      const { data } = await api.get("api/products");
+      const { data } = await api.get("/products");
       setProducts(data);
     } catch (error) {
       console.error("Error fetching products:", error);
@@ -28,7 +28,7 @@ const AdminDashboard = () => {
 
   const fetchOrders = async () => {
     try {
-      const { data } = await api.get("api/orders");
+      const { data } = await api.get("/orders");
       setOrders(data);
     } catch (error) {
       console.error("Error fetching orders:", error);
@@ -37,7 +37,7 @@ const AdminDashboard = () => {
 
   const fetchReturns = async () => {
     try {
-      const { data } = await api.get("api/returns");
+      const { data } = await api.get("/returns");
       setReturns(data);
     } catch (error) {
       console.error("Error fetching returns:", error);
@@ -54,7 +54,7 @@ const AdminDashboard = () => {
 
   const completeOrder = async (orderId) => {
     try {
-      await api.put(`api/orders/${orderId}/complete`);
+      await api.put(`/orders/${orderId}/complete`);
       fetchOrders();
     } catch (error) {
       console.error("Error completing order:", error);

@@ -29,7 +29,7 @@ const AdminReturns = () => {
 
   const fetchReturns = async () => {
     try {
-      const { data } = await api.get("api/returns");
+      const { data } = await api.get("/returns");
       setReturns(data);
     } catch (error) {
       console.error("Error fetching returns:", error);
@@ -57,7 +57,7 @@ const AdminReturns = () => {
     e.preventDefault();
     setUpdating(true);
     try {
-      await api.put(`api/returns/${selectedReturn._id}/status`, {
+      await api.put(`/returns/${selectedReturn._id}/status`, {
         status: updateForm.status,
         adminNote: updateForm.adminNote,
         refundAmount: updateForm.refundAmount

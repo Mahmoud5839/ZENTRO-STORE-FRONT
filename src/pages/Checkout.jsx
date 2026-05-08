@@ -156,7 +156,7 @@ const Checkout = () => {
         totalPrice,
       };
 
-      const { data } = await api.post("api/orders", orderData);
+      const { data } = await api.post("/orders", orderData);
 
       if (!isDirectOrder) {
         dispatch(clearCart());

@@ -40,7 +40,7 @@ const MyReturns = () => {
 
   const fetchReturns = async () => {
     try {
-      const { data } = await api.get("api/returns/my-returns");
+      const { data } = await api.get("/returns/my-returns");
       setReturns(data);
     } catch (error) {
       console.error("Error fetching returns:", error);
@@ -49,7 +49,7 @@ const MyReturns = () => {
 
   const fetchOrders = async () => {
     try {
-      const { data } = await api.get("api/orders/myorders");
+      const { data } = await api.get("/orders/myorders");
       // جلب الطلبات المكتملة فقط (اللي وصلت)
       const completedOrders = data.filter(
         (order) => order.isCompleted === true,
@@ -90,7 +90,7 @@ const MyReturns = () => {
 
     setSubmitting(true);
     try {
-      await api.post("api/returns", {
+      await api.post("/returns", {
         order: selectedOrder._id,
         product: selectedProduct.product,
         quantity: returnForm.quantity,
