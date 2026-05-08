@@ -123,9 +123,9 @@ const ResetPassword = () => {
                 className="absolute inset-y-0 left-0 pr-3 flex items-center"
               >
                 {showPassword ? (
-                  <FiEyeOff className="text-gray-400" />
+                  <FiEyeOff className="text-gray-400 ml-4" />
                 ) : (
-                  <FiEye className="text-gray-400" />
+                  <FiEye className="text-gray-400 ml-4" />
                 )}
               </button>
             </div>
@@ -162,9 +162,9 @@ const ResetPassword = () => {
                 className="absolute inset-y-0 left-0 pr-3 flex items-center"
               >
                 {showConfirmPassword ? (
-                  <FiEyeOff className="text-gray-400" />
+                  <FiEyeOff className="text-gray-400 ml-4" />
                 ) : (
-                  <FiEye className="text-gray-400" />
+                  <FiEye className="text-gray-400 ml-4" />
                 )}
               </button>
             </div>
