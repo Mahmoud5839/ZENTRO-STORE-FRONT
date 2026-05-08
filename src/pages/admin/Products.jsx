@@ -132,7 +132,6 @@ const AdminProducts = () => {
     setImageUrls(imageUrls.filter((_, i) => i !== index));
   };
 
-  // حساب إجمالي الأرباح المتوقعة
   const totalCostPrice = products.reduce(
     (sum, p) => sum + (p.costPrice || 0) * p.countInStock,
     0,
@@ -166,7 +165,6 @@ const AdminProducts = () => {
           </button>
         </div>
 
-        {/* إحصائيات سريعة */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <div className="bg-gray-800 rounded-lg p-6">
             <div className="flex items-center justify-between">
@@ -269,7 +267,7 @@ const AdminProducts = () => {
                         <div className="flex justify-center gap-3">
                           <button
                             onClick={() => editProduct(product)}
-                            className="text-blue-400 hover:text-blue-300"
+                            className=" hover:text-yellow-700 text-yellow-600"
                             title="تعديل"
                           >
                             <FiEdit2 />
@@ -401,7 +399,7 @@ const AdminProducts = () => {
 
                 <div>
                   <label className="block text-gray-300 mb-2 text-right">
-                    📸 صور المنتج
+                    صور المنتج
                   </label>
                   {imageUrls.map((url, index) => (
                     <div key={index} className="flex items-center gap-2 mb-2">
@@ -442,7 +440,7 @@ const AdminProducts = () => {
                   </button>
                   <button
                     type="submit"
-                    className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+                    className="px-4 py-2 bg-yellow-600 text-black font-bold rounded-lg hover:bg-yellow-700 transition"
                   >
                     {editingProduct ? "تحديث" : "إضافة"}
                   </button>

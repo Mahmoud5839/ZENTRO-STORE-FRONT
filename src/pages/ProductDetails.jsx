@@ -198,6 +198,12 @@ const ProductDetails = () => {
                 <span className="text-gray-500 text-sm">(4.5 - 127 تقييم)</span>
               </div>
 
+              {/* Description */}
+              <p className="text-gray-300 leading-relaxed">
+                {product.description ||
+                  "وصف المنتج غير متوفر حالياً. يرجى التواصل معنا لمزيد من التفاصيل."}
+              </p>
+
               {/* Price */}
               <div className="bg-green-200 rounded-xl p-4">
                 <div className="text-4xl font-bold text-green-600">

@@ -7,7 +7,7 @@ import {
   FiMessageSquare,
   FiSend,
 } from "react-icons/fi";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 import api from "../services/api";
 import { useNavigate } from "react-router-dom";
 
@@ -51,13 +51,13 @@ const MyMessages = () => {
       messages.forEach((msg) => {
         const hasBeenNotified = localStorage.getItem(`replied_${msg._id}`);
         if (msg.reply && !hasBeenNotified) {
-          toast.info(` رد جديد على رسالتك: ${msg.subject.substring(0, 40)}`, {
-            position: "top-center",
-            autoClose: 6000,
-            onClick: () => {
-              navigate("/my-messages");
-            },
-          });
+          // toast.info(` رد جديد على رسالتك: ${msg.subject.substring(0, 40)}`, {
+          //   position: "top-center",
+          //   autoClose: 6000,
+          //   onClick: () => {
+          //     navigate("/my-messages");
+          //   },
+          // });
           localStorage.setItem(`replied_${msg._id}`, "true");
         }
       });
@@ -82,7 +82,7 @@ const MyMessages = () => {
       fetchMessages();
     } catch (error) {
       console.error("Error sending reply:", error);
-      toast.error(" فشل في إرسال ردك، حاول مرة أخرى");
+      // toast.error(" فشل في إرسال ردك، حاول مرة أخرى");
     } finally {
       setSendingReply(false);
     }
