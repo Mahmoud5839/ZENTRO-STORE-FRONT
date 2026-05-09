@@ -147,7 +147,7 @@ const Home = () => {
                   onClick={() => filterByCategory(category)}
                   className={`px-5 py-2 rounded-full font-medium transition-all duration-300 ${
                     activeCategory === category
-                      ? "bg-blue-600 text-white shadow-lg scale-105"
+                      ? "bg-yellow-600 text-black font-bold shadow-lg scale-105"
                       : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-200"
                   }`}
                 >

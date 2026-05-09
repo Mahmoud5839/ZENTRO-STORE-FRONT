@@ -41,15 +41,15 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 group">
+    <div className="bg-gray-900 rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-1 group">
       <div className="relative overflow-hidden h-56">
         <img
           src={productImage}
           alt={product.name}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
         />
-        <div className="absolute top-2 right-2 bg-blue-600 text-white px-2 py-1 rounded-lg text-sm font-semibold">
-          ${product.price}
+        <div className="absolute top-2 right-2 bg-green-700 text-white px-2 py-1 rounded-lg text-sm font-semibold">
+          {product.price} EGP
         </div>
         {/* عرض عدد الصور المتاحة */}
         {product.images && product.images.length > 1 && (
@@ -59,11 +59,11 @@ const ProductCard = ({ product }) => {
         )}
       </div>
       <div className="p-4">
-        <div className="flex items-center text-gray-500 text-sm mb-2">
+        <div className="flex items-center text-gray-300 text-sm mb-2">
           <MdOutlineCategory className="ml-1" />
           <span>{product.category}</span>
         </div>
-        <h3 className="text-lg font-semibold mb-2 line-clamp-1">
+        <h3 className="text-lg font-semibold mb-2 line-clamp-1 text-gray-200">
           {product.name}
         </h3>
         <p className="text-gray-600 text-sm mb-3 line-clamp-2">
@@ -79,7 +79,7 @@ const ProductCard = ({ product }) => {
           </Link>
           <button
             onClick={handleBuyNow}
-            className="flex items-center space-x-1 bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700 transition"
+            className="flex items-center space-x-1 bg-yellow-600 text-white px-3 py-2 rounded-lg hover:bg-yellow-700 transition"
           >
             <FiShoppingCart />
             <span>شراء الآن</span>

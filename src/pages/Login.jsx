@@ -440,6 +440,7 @@ const Login = () => {
               shape="rectangular"
               text="continue_with"
               locale="ar"
+              className="w-full max-w-xs bg-yellow-600 hover:bg-yellow-700 text-white py-2 rounded-lg transition"
             />
           </div>
         </div>
