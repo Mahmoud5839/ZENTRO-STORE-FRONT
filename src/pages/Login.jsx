@@ -435,12 +435,11 @@ const Login = () => {
             <GoogleLogin
               onSuccess={googleSuccess}
               onError={googleError}
-              useOneTap
-              theme="filled_blue"
-              shape="rectangular"
+              theme="outlined"
+              size="large"
               text="continue_with"
+              shape="pill"
               locale="ar"
-              className="w-full max-w-xs bg-yellow-600 hover:bg-yellow-700 text-white py-2 rounded-lg transition"
             />
           </div>
         </div>
