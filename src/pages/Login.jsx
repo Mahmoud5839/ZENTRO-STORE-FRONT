@@ -282,7 +282,7 @@ const Login = () => {
                 value={password}
                 onChange={handlePasswordChange}
                 className="appearance-none rounded-lg relative block w-full px-3 py-2 bg-gray-700 border border-gray-600 placeholder-gray-400 text-white focus:outline-none focus:ring-yellow-500 focus:border-yellow-500 focus:z-10 sm:text-sm"
-                placeholder="•••••••••••"
+                placeholder="••••••••"
               />
               <button
                 type="button"
@@ -290,9 +290,9 @@ const Login = () => {
                 className="absolute inset-y-0 left-0 pr-3 flex items-center"
               >
                 {showPassword ? (
-                  <FiEyeOff className="text-gray-400" />
+                  <FiEyeOff className="text-gray-400 ml-4" />
                 ) : (
-                  <FiEye className="text-gray-400" />
+                  <FiEye className="text-gray-400 ml-4" />
                 )}
               </button>
             </div>
@@ -380,9 +380,9 @@ const Login = () => {
                   className="absolute inset-y-0 left-0 pr-3 flex items-center"
                 >
                   {showConfirmPassword ? (
-                    <FiEyeOff className="text-gray-400" />
+                    <FiEyeOff className="text-gray-400 ml-4" />
                   ) : (
-                    <FiEye className="text-gray-400" />
+                    <FiEye className="text-gray-400 ml-4" />
                   )}
                 </button>
               </div>
