@@ -64,7 +64,6 @@ const MyMessages = () => {
     }
   }, [messages, loading]);
 
-  // ✅ دالة إرسال رد من العميل
   const handleUserReply = async (ticketId) => {
     if (!replyText.trim()) {
       // toast.error(" يرجى كتابة الرد أولاً");

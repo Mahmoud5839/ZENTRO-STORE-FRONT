@@ -49,7 +49,7 @@ const ProductCard = ({ product }) => {
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
         />
         <div className="absolute top-2 right-2 bg-green-700 text-white px-2 py-1 rounded-lg text-sm font-semibold">
-          {product.price} EGP
+          {product.price} جنيه
         </div>
         {/* عرض عدد الصور المتاحة */}
         {product.images && product.images.length > 1 && (

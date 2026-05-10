@@ -124,7 +124,7 @@ const Cart = () => {
                       {item.name}
                     </Link>
                     <div className="text-2xl font-bold text-blue-600 mt-1">
-                      ${item.price}
+                      {item.price} جنيه
                     </div>
                   </div>
 
@@ -171,7 +171,7 @@ const Cart = () => {
                   <div className="text-center sm:text-left min-w-[80px]">
                     <p className="text-sm text-gray-500">الإجمالي</p>
                     <p className="text-xl font-bold text-gray-800">
-                      ${(item.price * item.quantity).toFixed(2)}
+                      {(item.price * item.quantity).toFixed(2)} جنيه
                     </p>
                   </div>
                 </div>

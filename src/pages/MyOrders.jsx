@@ -53,7 +53,6 @@ const MyOrders = () => {
   };
 
   const getOrderStatus = (order) => {
-    // التحقق إذا كان الطلب فيه منتجات مسترجعة بالكامل
     const allItemsReturned = order.orderItems.every((item) => {
       const isReturned = returns.some(
         (r) =>

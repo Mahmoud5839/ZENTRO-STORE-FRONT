@@ -29,7 +29,6 @@ const MyReturns = () => {
   });
   const [submitting, setSubmitting] = useState(false);
 
-  // جلب بيانات المستخدم من localStorage
   useEffect(() => {
     const storedUser = localStorage.getItem("userInfo");
     if (storedUser) {
@@ -50,7 +49,6 @@ const MyReturns = () => {
   const fetchOrders = async () => {
     try {
       const { data } = await api.get("/orders/myorders");
-      // جلب الطلبات المكتملة فقط (اللي وصلت)
       const completedOrders = data.filter(
         (order) => order.isCompleted === true,
       );

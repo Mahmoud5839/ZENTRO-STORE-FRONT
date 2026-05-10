@@ -51,7 +51,6 @@ const ProductDetails = () => {
     fetchProduct();
   }, [id]);
 
-  // إضافة إلى عربة التسوق
   const addToCartHandler = () => {
     const images = product.images || [product.image];
     dispatch(
@@ -68,7 +67,6 @@ const ProductDetails = () => {
     setTimeout(() => setAddedToCart(false), 2000);
   };
 
-  // طلب مباشر (يودي لصفحة الدفع)
   const directOrderHandler = () => {
     console.log("directOrderHandler called, userInfo:", userInfo);
 
@@ -207,7 +205,7 @@ const ProductDetails = () => {
               {/* Price */}
               <div className="bg-green-200 rounded-xl p-4">
                 <div className="text-4xl font-bold text-green-600">
-                  ${product.price}
+                  {product.price} جنيه
                 </div>
                 <p className="text-gray-500 text-sm mt-1">الشحن مجانا</p>
               </div>

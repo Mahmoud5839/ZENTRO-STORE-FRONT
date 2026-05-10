@@ -104,21 +104,17 @@ const AdminDashboard = () => {
         });
       }
     });
-    // ✅ خصم أرباح المرتجعات
     return totalProfit - calculateLostProfitFromReturns();
   };
 
-  // حساب إجمالي الإيرادات الفعلية (من الطلبات المكتملة - خصم المرتجعات المالية)
   const calculateActualRevenue = () => {
     const totalRevenue = orders
       .filter((order) => order.isCompleted === true)
       .reduce((sum, order) => sum + (order.totalPrice || 0), 0);
 
-    // ✅ خصم المبالغ المستردة
     return totalRevenue - calculateTotalRefunds();
   };
 
-  // حساب إجمالي الأرباح المتوقعة (من المنتجات في المخزون)
   const calculateExpectedProfit = () => {
     return products.reduce((sum, p) => {
       const profit = (p.price - (p.costPrice || 0)) * p.countInStock;
@@ -126,13 +122,11 @@ const AdminDashboard = () => {
     }, 0);
   };
 
-  // حساب إجمالي قيمة المخزون
   const totalInventoryValue = products.reduce(
     (sum, p) => sum + (p.costPrice || 0) * p.countInStock,
     0,
   );
 
-  // حساب عدد المرتجعات قيد المراجعة
   const pendingReturnsCount = returns.filter(
     (r) => r.status === "pending",
   ).length;
@@ -177,7 +171,7 @@ const AdminDashboard = () => {
           <p className="text-gray-400">مرحباً بعودتك! إليك ملخص أداء المتجر</p>
         </div>
 
-        {/* Stats Cards - الصف الأول */}
+        {/* Stats Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           <div className="bg-gray-800 rounded-xl shadow-lg p-6 hover:bg-gray-750 transition">
             <div className="flex items-center justify-between">

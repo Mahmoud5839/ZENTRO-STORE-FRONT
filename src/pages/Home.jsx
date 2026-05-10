@@ -25,7 +25,6 @@ const Home = () => {
       setProducts(data);
       setFilteredProducts(data);
 
-      // استخراج الأقسام الفريدة
       const uniqueCategories = [
         "الكل",
         ...new Set(data.map((p) => p.category).filter(Boolean)),
@@ -42,7 +41,6 @@ const Home = () => {
     fetchProducts();
   }, []);
 
-  // فلتر حسب القسم
   const filterByCategory = (category) => {
     setActiveCategory(category);
     if (category === "الكل") {
@@ -53,12 +51,10 @@ const Home = () => {
     setShowAllProducts(false);
   };
 
-  // المنتجات المعروضة (4 أو الكل)
   const displayedProducts = showAllProducts
     ? filteredProducts
-    : filteredProducts.slice(0, 4);
+    : filteredProducts.slice(0, 8);
 
-  // أحدث المنتجات (أول 4)
   const latestProducts = [...products].reverse().slice(0, 4);
 
   return (

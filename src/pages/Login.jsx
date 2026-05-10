@@ -41,7 +41,6 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // فحص قوة كلمة المرور
   const checkPasswordStrength = (pass) => {
     let score = 0;
 
@@ -77,7 +76,6 @@ const Login = () => {
     checkPasswordStrength(pass);
   };
 
-  // التحقق من صحة المدخلات
   const validateForm = () => {
     if (isRegister) {
       if (name.trim().length < 3) {
@@ -109,7 +107,6 @@ const Login = () => {
     return true;
   };
 
-  // إعادة إرسال رابط تأكيد البريد الإلكتروني
   const handleResendVerification = async () => {
     if (!unverifiedEmail) return;
 
@@ -148,7 +145,6 @@ const Login = () => {
         res = await api.post("/auth/login", { email, password });
         toast.success("مرحباً بعودتك! ");
         dispatch(setUserInfo(res.data));
-        // العودة للصفحة السابقة أو الرئيسية
         const from = location.state?.from || "/";
         navigate(from);
       }
@@ -170,7 +166,6 @@ const Login = () => {
     dispatch(setLoading(false));
   };
 
-  // إرسال رابط إعادة تعيين كلمة المرور
   const handleForgotPassword = async () => {
     if (!forgotEmail || !forgotEmail.includes("@")) {
       toast.error("يرجى إدخال بريد إلكتروني صحيح");
@@ -193,7 +188,6 @@ const Login = () => {
     }
   };
 
-  // تسجيل دخول بجوجل
   const googleSuccess = async (credentialResponse) => {
     dispatch(setLoading(true));
     try {
@@ -399,7 +393,6 @@ const Login = () => {
             </div>
           )}
 
-          {/* زر نسيت كلمة المرور */}
           {!isRegister && (
             <div className="flex justify-end">
               <button
@@ -440,6 +433,7 @@ const Login = () => {
               text="continue_with"
               shape="pill"
               locale="ar"
+              
             />
           </div>
         </div>
@@ -459,7 +453,6 @@ const Login = () => {
         </div>
       </div>
 
-      {/* مودال نسيت كلمة المرور */}
       {showForgotModal && (
         <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4">
           <div className="bg-gray-800 rounded-2xl max-w-md w-full p-6 shadow-2xl border border-gray-700">
@@ -503,7 +496,6 @@ const Login = () => {
         </div>
       )}
 
-      {/*   مودال تأكيد البريد الإلكتروني (للمستخدم غير المؤكد) */}
       {showVerificationModal && (
         <div className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50 p-4">
           <div className="bg-gray-800 rounded-2xl max-w-md w-full p-6 shadow-2xl border border-gray-700">
