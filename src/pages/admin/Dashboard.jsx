@@ -347,6 +347,9 @@ const AdminDashboard = () => {
                     رقم الهاتف
                   </th>
                   <th className="p-3 text-center text-xs font-medium text-gray-300 uppercase">
+                    العنوان
+                  </th>
+                  <th className="p-3 text-center text-xs font-medium text-gray-300 uppercase">
                     الإجمالي
                   </th>
                   <th className="p-3 text-center text-xs font-medium text-gray-300 uppercase">
@@ -364,7 +367,7 @@ const AdminDashboard = () => {
                 {filteredOrders.slice(0, 10).map((order) => (
                   <tr key={order._id} className="hover:bg-gray-700">
                     <td className="p-3 text-gray-300 font-mono text-sm">
-                      {order._id.slice(-8)}
+                      {order._id.slice(-4)}
                     </td>
                     <td className="p-3 text-center text-gray-300">
                       {order.shippingAddress?.fullName ||
@@ -373,6 +376,9 @@ const AdminDashboard = () => {
                     </td>
                     <td className="p-3 text-center text-gray-300">
                       {order.shippingAddress?.phone || "غير متوفر"}
+                    </td>
+                    <td className="p-3 text-center text-gray-300">
+                      {order.shippingAddress?.address || "غير متوفر"}
                     </td>
                     <td className="p-3 text-center text-gray-300">
                       {order.totalPrice}
